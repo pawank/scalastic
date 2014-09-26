@@ -15,9 +15,11 @@ object Build extends Build {
   )
 
   val scalaSettings = Seq(
-    scalaVersion := "2.10.3",
+    scalaVersion := "2.11.2",
     scalacOptions ++= Seq("-unchecked", "-feature", "-deprecation")
   )
+
+  crossScalaVersions  := Seq("2.11.0", "2.11.2","2.10.4","2.10.3")
 
   val publishSettings = Seq(
     publishMavenStyle := true,
@@ -68,10 +70,10 @@ object Build extends Build {
     libraryDependencies ++= Seq(
       "org.elasticsearch" % "elasticsearch" % "1.1.0",
       "com.google.code.findbugs" % "jsr305" % "1.3.9",
-      "org.clapper" %% "grizzled-slf4j" % "1.0.1",
+      "org.clapper" %% "grizzled-slf4j" % "1.0.2",
 
       "junit" % "junit" % "4.10" % "test",
-      "org.scalatest" %% "scalatest" % "2.0" % "test",
+      "org.scalatest"          % "scalatest_2.11"                     % "2.2.1"            % "test",
       "ch.qos.logback" % "logback-classic" % "1.0.2" % "test"
     ),
 
